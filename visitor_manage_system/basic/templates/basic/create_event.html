@@ -1,0 +1,38 @@
+{% extends 'basic/dashboard.html' %}
+
+{% block content %}
+{% load static %}
+<html>
+    <head>
+        <title>Create Event</title>
+        <style>
+            #event{
+                width:40%;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" method="POST">
+            {%  csrf_token %}
+            <!-- <div class="col mx-5 my-5" > -->
+                <div class="card card-body" id="event">
+        
+                <h4>Tag :</h4>{{form.tag}}
+                 <br><br>
+                 <h4>Organizer  :</h4>{{form.organizer}}
+                 <br><br>
+                 <h4>Event data(yyyy-mm-dd) :</h4>{{form.event_date_time}}
+                 {% comment %} <input name='helloname' type="datetime-local"> {% endcomment %}
+                 <br><br>
+                 <h4>Event purpose :</h4>{{form.event_purpose}}
+                 <br><br>
+                <button type="button" class="btn btn-primary">Submit</button> 
+                </div>
+            <!-- </div> -->
+            
+        </form>
+    </body>
+</html>
+
+{% endblock %} 
